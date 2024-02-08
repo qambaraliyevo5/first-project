@@ -7,9 +7,10 @@ import { PiTaxi, PiUsersFourLight } from "react-icons/pi";
 import { TbReportAnalytics } from "react-icons/tb";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BiCategoryAlt } from "react-icons/bi";
+
 const Sidebar = () => {
   const navigate = useNavigate();
-  const path_name=useLocation();
+  const pathName = useLocation();
 
   const menus = [
     { name: "Boshqaruv paneli", link: "/home", icon: GoHome },
@@ -25,15 +26,17 @@ const Sidebar = () => {
 
   const [open, setOpen] = useState(true);
 
+  const handleClick = (link) => {
+    navigate(`/admin${link}`);
+  };
+
   return (
     <section className="flex gap-6">
       <div
-        className={`bg-white min-h-screen ${open ? "w-72" : "w-16"
-          } duration-500 text-gray-100 px-4 h-96 overflow-x-auto`}
+        className={`bg-white min-h-screen ${open ? "w-72" : "w-16"} duration-500 text-gray-100 px-4 h-96 overflow-x-auto`}
       >
-
         <div className="flex items-center justify-end gap-6 py-3 text-center">
-          <Link to={"/admin/home"} className={`no-underline ${open ? "block" : "hidden"}`}>
+          <Link to="/admin/home" className={`no-underline ${open ? "block" : "hidden"}`}>
             <h1 className="text-black">Omo Food</h1>
           </Link>
 
@@ -44,7 +47,7 @@ const Sidebar = () => {
             />
           ) : (
             <FiArrowLeft
-              className="text-2xl text-black cursor-pointer" // Adjust the font size here
+              className="text-2xl text-black cursor-pointer"
               onClick={() => setOpen(!open)}
             />
           )}
@@ -52,28 +55,26 @@ const Sidebar = () => {
 
         <div className="relative flex flex-col gap-4 mt-4">
           {menus?.map((menu, i) => (
-         <div key={i} className="" onClick={() => navigate(`/admin${menu?.link}`)}>
-         <Link
-           to={`/admin${menu.link}`}
-           className={`${menu?.margin && ""} ${path_name.pathname===`/admin${menu.link}`? "actives text-white" : "text-black"} group flex items-center text-sm no-underline text-center gap-3.5 font-medium p-2 rounded-md`}
-         >
-           <h1 className="text-xl ">{React.createElement(menu?.icon)}</h1>
-           <h2
-
-             className={`text-xl  ${!open && "opacity-0 translate-x-28 overflow-hidden"
-               }`}
-           >
-             {menu?.name}
-           </h2>
-         </Link>
-       </div>
+            <div key={i} onClick={() => handleClick(menu?.link)}>
+              <Link
+                to={`/admin${menu.link}`}
+                className={`${
+                  menu?.margin && ""
+                } group flex items-center text-sm no-underline text-center gap-3.5 font-medium p-2 rounded-md ${
+                  pathName.pathname === `/admin${menu.link}` ? "actives text-white bg-blue-500" : "text-black"
+                }`}
+              >
+                <h1 className="text-xl ">{React.createElement(menu?.icon)}</h1>
+                <h2 className={`text-xl  ${!open && "opacity-0 translate-x-28 overflow-hidden"}`}>
+                  {menu?.name}
+                </h2>
+              </Link>
+            </div>
           ))}
         </div>
-
       </div>
     </section>
   );
 };
 
 export default Sidebar;
-  
