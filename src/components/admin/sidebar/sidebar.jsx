@@ -28,7 +28,7 @@ const Sidebar = () => {
   return (
     <section className="flex gap-6">
       <div
-        className={`bg-white min-h-screen ${open ? "w-72" : "w-16"
+        className={`bg-yellow   min-h-screen ${open ? "w-72" : "w-16"
           } duration-500 text-gray-100 px-4 h-96 overflow-x-auto`}
       >
 
