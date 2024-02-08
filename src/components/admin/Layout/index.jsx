@@ -1,6 +1,6 @@
 import React from "react";
-import {  Outlet } from "react-router-dom";
 import Sidebar from "../sidebar/sidebar";
+import { Outlet } from "react-router-dom";
 
 
 export default function Layout() {
