@@ -13,31 +13,6 @@ function Login() {
 
   const checkLogin = async () => {
     try {
-<<<<<<< HEAD
-      const response = await fetch('https://omofood.pythonanywhere.com/api/v1/users/token/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        })
-      }).then((res) => json(res)).then((res) => {
-        console.log(res,'res');
-      })
-      
-      if (response.ok) {
-        localStorage.setItem('isLoggedIn', 'true');
-        
-        // Correctly show success message before navigation
-        toast.success('Siz kirdingiz', {
-          onClose: () => {
-            navigate('/admin/home');
-          },
-          autoClose: 5000, // Adjust based on how long you want the toast to show
-        });
-=======
       const formData = new FormData();
       formData.append('username', username);
       formData.append('password', password);
@@ -48,7 +23,6 @@ function Login() {
           localStorage.setItem('user', response.data.access);
           navigate('/admin/home');
         }, 1000);
->>>>>>> 0a32c754a455ad9ab69c2c8b8e1a682147036177
       } else {
         // Handle non-OK response without throwing an error unnecessarily
         toast.error('Siz kira olmadingiz');
