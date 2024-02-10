@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes,   } from 'react-router-dom';
 import Layout from '../components/admin/Layout/index';
 import Login from '../components/admin/auth/sigin';
+import Order from '../components/admin/order/order';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <Route path="/admin" element={<Login/>} />
             <Route element={<Layout />}>
               <Route path="/admin/home" element={<h1>Admin</h1>} />
-              <Route path="/admin/order" element={<h1>order</h1>} />
+              <Route path="/admin/order" element={<Order/>} />
               <Route path="/admin/subcategories" element={<h1>subcategories</h1>} />
               <Route path="/admin/banners" element={<h1>banners</h1>} />
               <Route path="/admin/dashbord" element={<h1>dashbord</h1>} />
