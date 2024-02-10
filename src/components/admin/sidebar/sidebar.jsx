@@ -33,22 +33,21 @@ const Sidebar = () => {
   return (
     <section className="flex gap-6">
       <div
-        className={`bg-white min-h-screen ${open ? "w-72" : "w-16"
-          } duration-500 text-gray-100 px-4 h-96 overflow-x-auto`}
+        className={`bg-white min-h-screen ${open ? "w-72" : "w-20"} duration-500 text-gray-100 px-4 h-96 overflow-x-auto`}
       >
         <div className="flex items-center justify-end gap-6 py-3 text-center">
           <Link to="/admin/home" className={`no-underline ${open ? "block" : "hidden"}`}>
-            <h1 className="text-black">Omo Food</h1>
+            <h1 className="text-3xl font-bold text-black">Omo Food</h1>
           </Link>
 
           {open ? (
             <FiArrowRight
-              className="text-2xl text-black cursor-pointer"
+              className="text-1xl text-black cursor-pointer"
               onClick={() => setOpen(!open)}
             />
           ) : (
             <FiArrowLeft
-              className="text-2xl text-black cursor-pointer"
+              className="text-1xl text-black cursor-pointer"
               onClick={() => setOpen(!open)}
             />
           )}
@@ -61,7 +60,7 @@ const Sidebar = () => {
                 to={`/admin${menu.link}`}
                 className={`${
                   menu?.margin && ""
-                } group flex items-center text-sm no-underline text-center gap-3.5 font-medium p-2 rounded-md ${
+                } group flex items-center text-1xl no-underline text-center gap-1 font-medium p-2 rounded-md ${
                   pathName.pathname === `/admin${menu.link}` ? "actives text-white bg-blue-500" : "text-black"
                 }`}
               >

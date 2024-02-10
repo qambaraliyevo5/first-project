@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Routes,   } from 'react-router-dom';
 import Layout from '../components/admin/Layout/index';
 import Login from '../components/admin/auth/sigin';
+import Table from '../components/admin/CategoriesCrud/table';
+import ProductCrud from '../components/admin/productCrud/table';
 
 
 function App() {
@@ -19,9 +21,9 @@ function App() {
               <Route path="/admin/banners" element={<h1>banners</h1>} />
               <Route path="/admin/dashbord" element={<h1>dashbord</h1>} />
               <Route path="/admin/discount" element={<h1>discount</h1>} />
-              <Route path="/admin/products" element={<h1>products</h1>} />
+              <Route path="/admin/products" element={<ProductCrud/>} />
               <Route path="/admin/deliveries" element={<h1>deliveries</h1>} />
-              <Route path="/admin/categories" element={<h1>categories</h1>} />
+              <Route path="/admin/categories" element={<Table/>} />
               <Route path="/admin/note" element={<h1>note</h1>} />
             </Route>
       </Routes>

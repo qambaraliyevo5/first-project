@@ -1,15 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { setupListeners } from '@reduxjs/toolkit/query'
-import { ProductCrud } from '../slice/product'
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+
+import { GetProducts } from "../slice/client/getProduct";
 
 export const store = configureStore({
-  reducer: {
-    [ProductCrud.reducerPath]: ProductCrud.reducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(
-      ProductCrud.middleware
-      
-      ),
-})
-setupListeners(store.dispatch)
+    reducer: {
+        [GetProducts.reducerPath]:GetProducts.reducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(
+          GetProducts.middleware
+        ),
+});
+
+setupListeners(store.dispatch);

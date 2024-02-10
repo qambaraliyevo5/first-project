@@ -1,9 +1,9 @@
 import React from 'react'
 
-function table() {
+function Table() {
   return (
     <div>table</div>
   )
 }
 
-export default table
+export default Table

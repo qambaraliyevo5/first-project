@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { json, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './login.css';
@@ -20,9 +20,11 @@ function Login() {
         body: JSON.stringify({
           username: username,
           password: password,
-        }),
-      });
-  
+        })
+      }).then((res) => json(res)).then((res) => {
+        console.log(res,'res');
+      })
+      
       if (response.ok) {
         localStorage.setItem('isLoggedIn', 'true');
         
