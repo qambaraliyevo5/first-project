@@ -3,15 +3,17 @@ import { json, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './login.css';
+import axios from 'axios';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
  
- 
+
   const checkLogin = async () => {
     try {
+<<<<<<< HEAD
       const response = await fetch('https://omofood.pythonanywhere.com/api/v1/users/token/', {
         method: 'POST',
         headers: {
@@ -35,6 +37,18 @@ function Login() {
           },
           autoClose: 5000, // Adjust based on how long you want the toast to show
         });
+=======
+      const formData = new FormData();
+      formData.append('username', username);
+      formData.append('password', password);
+      const response = await axios.post('users/token/', formData);
+      if (response.status === 200) {
+        toast.success('Siz kirdingiz');
+        setTimeout(() => {
+          localStorage.setItem('user', response.data.access);
+          navigate('/admin/home');
+        }, 1000);
+>>>>>>> 0a32c754a455ad9ab69c2c8b8e1a682147036177
       } else {
         // Handle non-OK response without throwing an error unnecessarily
         toast.error('Siz kira olmadingiz');
