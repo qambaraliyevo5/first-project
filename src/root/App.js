@@ -4,6 +4,7 @@ import Layout from '../components/admin/Layout/index';
 import Login from '../components/admin/auth/sigin';
 import CategoriesCrud from '../components/admin/CategoriesCrud/table';
 import ProductCom from '../components/admin/productTest';
+import Order from '../components/admin/order/order';
 
 
 function App() {
