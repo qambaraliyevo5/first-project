@@ -1,18 +1,20 @@
 // api.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { api } from '../../../../Api/api';
+
 
 export const ProductCrud = createApi({
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://ratingkorea.pythonanywhere.com/api/v1/' }),
+    baseQuery:api,
     reducerPath: 'FamousData',
     tagTypes: ['Famous'],
     endpoints: (builder) => ({
-        getFamous: builder.query({
-            query: () => 'famous-sports/',
+        getProducts: builder.query({
+            query: () => 'products/',
             providesTags: ['Famous'],
         }),
         createFamous: builder.mutation({
             query: (body) => ({
-                url: `famous-sports/`,
+                url: `products/`,
                 method: "POST",
                 body,
             }),
@@ -20,7 +22,7 @@ export const ProductCrud = createApi({
         }),
         deleteFamous: builder.mutation({
             query: (body) => ({
-                url: `famous-sports/${body.id}`,
+                url: `products/body.id}`,
                 method: 'DELETE',
                 body,
             }),
@@ -30,7 +32,7 @@ export const ProductCrud = createApi({
 });
 
 export const {
-    useGetFamousQuery,
+    useGetProductsQuery,
     useDeleteFamousMutation,
     useCretteFamousMutation,
 } = ProductCrud;

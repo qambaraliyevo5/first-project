@@ -33,22 +33,21 @@ const Sidebar = () => {
   return (
     <section className="flex gap-6">
       <div
-        className={`bg-white min-h-screen ${open ? "w-72" : "w-16"
-          } duration-500 text-gray-100 px-4 h-96 overflow-x-auto`}
+        className={`bg-white min-h-screen ${open ? "w-80" : "w-20"} duration-500 text-gray-100 px-4 h-96 overflow-x-auto`}
       >
         <div className="flex items-center justify-end gap-6 py-3 text-center">
           <Link to="/admin/home" className={`no-underline ${open ? "block" : "hidden"}`}>
-            <h1 className="text-black">Omo Food</h1>
+          <h1 className="text-3xl font-bold text-black">Omo Food</h1>
           </Link>
 
           {open ? (
             <FiArrowRight
-              className="text-2xl text-black cursor-pointer"
+              className="text-1xl text-black cursor-pointer"
               onClick={() => setOpen(!open)}
             />
           ) : (
             <FiArrowLeft
-              className="text-2xl text-black cursor-pointer"
+              className="text-1xl text-black cursor-pointer"
               onClick={() => setOpen(!open)}
             />
           )}
