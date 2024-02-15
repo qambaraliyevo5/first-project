@@ -41,7 +41,7 @@ const AddCategories = () => {
 
 
   return (
- 
+//  
     <div>
     <button
       onClick={() => setOpen(true)}
