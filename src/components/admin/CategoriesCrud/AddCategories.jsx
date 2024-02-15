@@ -3,7 +3,8 @@ import { toast } from "react-toastify";
 import { useCreateCategoryMutation } from "../../redux/slice/CategoriesCrud/crud";
 
 import ImageUpload from "../../generic/imgUpload";
-import Modal from "../../generic/Modal.jsx";
+import Modal from "../../generic/modal";
+
 
 
 const AddCategories = () => {
@@ -45,7 +46,7 @@ const AddCategories = () => {
     <button
       onClick={() => setOpen(true)}
       type="button"
-      className="bg-red-600 inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      className=" bg-blue-600 inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
     >asfasfa
       +
       Mahsulod turi
