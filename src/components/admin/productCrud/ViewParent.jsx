@@ -3,7 +3,8 @@ import { AiOutlineEye } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { toast } from "react-toastify";
 import { useDeleteProductImgMutation } from "../../redux/slice/client/getProduct";
-import Modal from "../../generic/Modal";
+import Modal from "../../generic/modal";
+
 
 export default function View({formattedDate,object}) {
   const [isOpen, setIsOpen] = useState(false);

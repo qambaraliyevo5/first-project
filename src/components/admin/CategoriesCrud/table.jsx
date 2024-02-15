@@ -59,7 +59,6 @@ const Table = () => {
             placeholder="Search....."
             required
           />
-          <AddCategories/>
         </div>
         <div>
           <button
