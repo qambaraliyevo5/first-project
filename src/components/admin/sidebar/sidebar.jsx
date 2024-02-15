@@ -60,7 +60,7 @@ const Sidebar = () => {
                 to={`/admin${menu.link}`}
                 className={`${
                   menu?.margin && ""
-                } group flex items-center text-sm no-underline text-center gap-3.5 font-medium p-2 rounded-md ${
+                } group flex items-center text-1xl no-underline text-center gap-1 font-medium p-2 rounded-md ${
                   pathName.pathname === `/admin${menu.link}` ? "actives text-white bg-blue-500" : "text-black"
                 }`}
               >
