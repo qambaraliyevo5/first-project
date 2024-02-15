@@ -34,5 +34,5 @@ export const ProductCrud = createApi({
 export const {
     useGetProductsQuery,
     useDeleteFamousMutation,
-    useCretteFamousMutation,
+    useCreateFamousMutation,
 } = ProductCrud;
