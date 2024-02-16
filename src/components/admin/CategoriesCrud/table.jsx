@@ -4,12 +4,14 @@ import { useGetCategoriesQuery } from "../../redux/slice/CategoriesCrud/crud";
 
 const Table = () => {
   const { data: categories, error, isLoading } = useGetCategoriesQuery();
+
+  console.log(categories, 'categories');
   const [search, setSearch] = useState("");
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.error}</div>;
 
   return (
-    <div class=" pt-10px relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div class=" pt-10px relative overflow-x-auto bg-red-500 h-[99vh] shadow-md sm:rounded-lg">
       <div className="flex  justify-between">
         <div>
           <input
@@ -31,7 +33,7 @@ const Table = () => {
           </button>
         </div>
       </div>
-      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <table class="w-full  overflow-y-scroll  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" class="p-4">
@@ -40,8 +42,27 @@ const Table = () => {
             <th scope="col" class="p-4">
               Mahsulod turi nomi
             </th>
-            <th scope="col" class="p-4"></th>
+            <th scope="col" class="p-4">action</th>
           </tr>
+
+          {[...categories].reverse()?.map((value) => {
+            return (
+              <tr>
+                <th scope="col" class="p-4">
+                  <img className="rounded-2xl  w-[70px] h-[60px]" src={value?.image} alt={value?.title} />
+                </th>
+                <th scope="col" class="p-4">
+                  {value?.title}
+                </th>
+                <th scope="col" class="p-4 flex gap-2">
+                  <button>edit</button>
+                  <button>delte</button>
+
+                </th>
+
+              </tr>
+            )
+          })}
         </thead>
         <tbody></tbody>
       </table>

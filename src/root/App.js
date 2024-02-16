@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, } from 'react-router-dom';
 import Layout from '../components/admin/Layout/index';
 import Login from '../components/admin/auth/sigin';
 import CategoriesCrud from '../components/admin/CategoriesCrud/table';
-import ProductCom from '../components/admin/productTest';
+import ProductTable from '../components/admin/productCrud/product';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
             <Route path="/admin/banners" element={<h1>banners</h1>} />
             <Route path="/admin/dashbord" element={<h1>dashbord</h1>} />
             <Route path="/admin/discount" element={<h1>discount</h1>} />
-            <Route path="/admin/products" element={<ProductCom />} />
+            <Route path="/admin/products" element={<ProductTable />} />
             <Route path="/admin/deliveries" element={<h1>deliveries</h1>} />
             <Route path="/admin/categories" element={<CategoriesCrud />} />
             <Route path="/admin/note" element={<h1>note</h1>} />
