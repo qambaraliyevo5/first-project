@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { useCreateCategoryMutation } from "../../redux/slice/CategoriesCrud/crud";
 
 import ImageUpload from "../../generic/imgUpload";
-import Modal from "../../generic/Modal.jsx";
 
 
 const AddCategories = () => {
@@ -51,7 +50,8 @@ const AddCategories = () => {
       Mahsulod turi
     </button>
     {open && (
-      <Modal loader={isCreating} closeModal={() => setOpen(false)} addFunc={handleSubmit}>
+      <Modal
+       loader={isCreating} closeModal={() => setOpen(false)} addFunc={handleSubmit}>
         <div className="flex flex-col gap-3">
           <div>
             <label>Mahsuldo turi nomi:</label>
@@ -64,7 +64,7 @@ const AddCategories = () => {
           <div>
             <ImageUpload
               title={'Image'}
-              // iconName={<MdOutlineInsertPhoto className="text-5xl" />}
+
               iconTitle={'Upload Image'}
               fileType={'PNG, JPG, JPEG up to 5MB'}
               LabelFor={'img'}
