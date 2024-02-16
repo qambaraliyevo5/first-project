@@ -5,7 +5,7 @@ import { useGetCategoriesQuery } from "../../redux/slice/CategoriesCrud/crud";
 const Table = () => {
   const { data: categories, error, isLoading } = useGetCategoriesQuery();
 
-  console.log(categories,'categories');
+  console.log(categories, 'categories');
   const [search, setSearch] = useState("");
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.error}</div>;
@@ -48,19 +48,19 @@ const Table = () => {
           {[...categories].reverse()?.map((value) => {
             return (
               <tr>
-              <th scope="col" class="p-4">
-                <img className="rounded-2xl  w-[70px] h-[60px]" src={value?.image} alt={value?.title} />
-              </th>
-              <th scope="col" class="p-4">
-                { value?.title}
-              </th>
-              <th scope="col" class="p-4 flex gap-2">
-                <button>edit</button>
-                <button>delte</button>
+                <th scope="col" class="p-4">
+                  <img className="rounded-2xl  w-[70px] h-[60px]" src={value?.image} alt={value?.title} />
+                </th>
+                <th scope="col" class="p-4">
+                  {value?.title}
+                </th>
+                <th scope="col" class="p-4 flex gap-2">
+                  <button>edit</button>
+                  <button>delte</button>
 
-                 </th>
+                </th>
 
-            </tr>
+              </tr>
             )
           })}
         </thead>
