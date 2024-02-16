@@ -67,6 +67,7 @@ const ProductTable = () => {
                                             const options = { hour12: false };
                                             const formattedDate = dateObject.toLocaleString(
                                                 "en-US",
+                                                
                                                 options
                                             );
 
