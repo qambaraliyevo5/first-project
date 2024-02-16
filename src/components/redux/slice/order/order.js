@@ -3,15 +3,14 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { api } from '../../../../Api/api';
 
 
-
-export const ProductCrud = createApi({
+export const OrderCrud = createApi({
     baseQuery:api,
-    reducerPath: 'FamousData',
-    tagTypes: ['Famous'],
+    reducerPath: 'OrderData',
+    tagTypes: ['Orderdata'],
     endpoints: (builder) => ({
-        getProducts: builder.query({
-            query: () => 'products/',
-            providesTags: ['Famous'],
+        getOrder: builder.query({
+            query: () => 'orders/',
+            providesTags: ['Order'],
         }),
         createFamous: builder.mutation({
             query: (body) => ({
@@ -19,7 +18,7 @@ export const ProductCrud = createApi({
                 method: "POST",
                 body,
             }),
-            invalidatesTags: ['Famous'],
+            invalidatesTags: ['Order'],
         }),
         deleteFamous: builder.mutation({
             query: (body) => ({
@@ -27,13 +26,13 @@ export const ProductCrud = createApi({
                 method: 'DELETE',
                 body,
             }),
-            invalidatesTags: ['Famous']
+            invalidatesTags: ['Order']
         }),
     }),
 });
 
 export const {
-    useGetProductsQuery,
+    useGetOrderQuery,
     useDeleteFamousMutation,
-    useCreateFamousMutation,
-} = ProductCrud;
+    useCretteFamousMutation,
+} = OrderCrud;
