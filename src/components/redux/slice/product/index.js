@@ -23,11 +23,19 @@ export const ProductCrud = createApi({
         }),
         deleteProduct: builder.mutation({
             query: (body) => ({
-                url: `products/body.id}`,
+                url: `products/${body.id}`,
                 method: 'DELETE',
                 body,
             }),
             invalidatesTags: ['Product']
+        }),
+        updateProduct: builder.mutation({
+            query: (body) => ({
+                url:`products/${body.get("id")}/`,
+                method: "PATCH",
+                body,
+            }),
+            invalidatesTags: ['Product'],
         }),
     }),
 });
@@ -35,5 +43,6 @@ export const ProductCrud = createApi({
 export const {
     useGetProductsQuery,
     useCreateProductMutation,
-    useDeleteProductMutation
+    useDeleteProductMutation,
+    useUpdateProductMutation,
 } = ProductCrud;
