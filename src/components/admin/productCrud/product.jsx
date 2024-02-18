@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useGetProductsQuery } from '../../redux/slice/product'
 import AddCategories from './Addproduct.jsx';
+import DeleteCategorie from './delete.jsx';
+import UpdateProduct from './Update.jsx';
 
 const ProductTable = () => {
     const { data, error, isLoading } = useGetProductsQuery();
@@ -59,6 +61,7 @@ const ProductTable = () => {
                                 <tbody>
                                     {isLoading ? (
                                         <div className="absolute inset-0 flex items-center justify-center">
+                                         <h1>Loading...</h1>
                                         </div>
                                     ) : filteredData?.length > 0 ? (
                                         filteredData.reverse()?.map((item) => {
@@ -119,7 +122,8 @@ const ProductTable = () => {
                                                     </td>
                                                     <td className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                         <div className="flex items-center space-x-4">
-                                                            <h1 className=' hover:text-gray-800 cursor-pointer active:cursor-grabbing select-none'>salom</h1>
+                                                        <UpdateProduct object={item}/>
+                                                        <DeleteCategorie ID={item.id}/>
                                                         </div>
                                                     </td>
                                                 </tr>
