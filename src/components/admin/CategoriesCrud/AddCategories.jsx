@@ -13,7 +13,6 @@ const AddCategories = () => {
 
 
   const [createCategoria, { isLoading: isCreating }] = useCreateCategoryMutation();
-
   const [inputValue, setInputValue] = useState({
     name: '',
     img: '',
