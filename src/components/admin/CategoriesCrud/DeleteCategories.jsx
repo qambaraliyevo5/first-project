@@ -11,7 +11,7 @@ const DeleteCategories = ({ categoryId }) => {
   return <button onClick={handleDelete}>Delete</button>;
 };
 
-export default DeleteCategories;
+export default DeleteCategories;   
 
 
 

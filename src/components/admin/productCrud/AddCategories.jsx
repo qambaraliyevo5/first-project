@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Modal from '../../generic/Modal';
+
 import ImageUpload from '../../ImageUpload/ImageUpload';
 import { MdOutlineInsertPhoto } from 'react-icons/md'; 
 import { toast } from 'react-toastify';
 import { useCreateProductMutation } from '../../redux/slice/client/getProduct';
 import { useGetSubCategoryQuery } from '../../redux/slice/client/subcategory';
 import { useGetCategoryQuery } from '../../redux/slice/client/category';
+import Modal from '../../generic/modal';
 
 const AddProduct = ({object}) => {
   // state
