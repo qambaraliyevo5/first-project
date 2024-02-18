@@ -1,4 +1,6 @@
 import React from "react";
+import ButtonLoader from "./buttonLoader";
+// import ButtonLoader from "../Loader/ButtonLoader";
 export default function Modal({
   title,
   addFunc,
@@ -38,8 +40,7 @@ export default function Modal({
           {!loader ? (
             buttonText
           ) : (
-            // <ButtonLoader Color="white" Size={20} extraclassName="h-6" />
-            <h1></h1>
+            <ButtonLoader Color="white" Size={20} extraclassName="h-6" />
           )}
         </button>
       </div>
