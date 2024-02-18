@@ -39,7 +39,6 @@ const TableCom = () => {
                 action
               </th>
             </tr>
-
             {[...categories].reverse()?.map((value) => {
               return (
                 <tr>
