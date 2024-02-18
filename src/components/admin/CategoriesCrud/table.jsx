@@ -11,7 +11,7 @@ const Table = () => {
   if (error) return <div>Error: {error.error}</div>;
 
   return (
-    <div class=" pt-10px relative overflow-x-auto bg-red-500 h-[99vh] shadow-md sm:rounded-lg">
+    <div class=" pt-10px relative overflow-x-auto h-[99vh] shadow-md sm:rounded-lg">
       <div className="flex  justify-between">
         <div>
           <input
