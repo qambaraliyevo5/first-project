@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useGetSubcatigoriesQuery } from "../../redux/slice/SubCategories/crud";
 import UpdateCategoriesCom from '../CategoriesCrud/UpdateCategories'
-import DeleteCategorie from "../productCrud/delete";
+import DeleteCategorieCom from "../productCrud/delete";
 import AddCategoriesCom from "./AddCategiresCom";
 
 const TableCom = () => {
@@ -26,8 +26,8 @@ const TableCom = () => {
         <AddCategoriesCom/>
       </div>
       <div className=" overflow-x-auto h-[80vh]">
-        <table class="w-full  overflow-y-scroll  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="  shadow-zinc-800 text-xs text-gray-700 uppercase bg-gray-50 dark:bg-white-700 dark:text-gray-400">
             <tr>
               <th scope="col" class="p-4">
                 Mahsulod turi rasmi
@@ -54,8 +54,7 @@ const TableCom = () => {
                   </th>
                   <th scope="col" class="p-4 flex gap-2">
                     <div className="flex items-center space-x-4">
-                      {/* <UpdateCategoriesCom object={item} />
-                      <DeleteCategorie ID={item.id} /> */}
+                      <DeleteCategorieCom/>
                     </div>
                   </th>
                 </tr>
