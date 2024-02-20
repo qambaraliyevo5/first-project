@@ -11,7 +11,7 @@ const Table = () => {
   if (error) return <div>Error: {error.error}</div>;
 
   return (
-    <div class=" pt-10px relative overflow-x-auto bg-red-500 h-[99vh] shadow-md sm:rounded-lg">
+    <div class="bg-gray-800  dark:bg-white-900 p-3 sm:p-4 antialiased">
       <div className="flex  justify-between">
         <div>
           <input
@@ -33,39 +33,45 @@ const Table = () => {
           </button>
         </div>
       </div>
-      <table class="w-full  overflow-y-scroll  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-          <tr>
-            <th scope="col" class="p-4">
-              Mahsulod turi rasmi
-            </th>
-            <th scope="col" class="p-4">
-              Mahsulod turi nomi
-            </th>
-            <th scope="col" class="p-4">action</th>
-          </tr>
-
-          {[...categories].reverse()?.map((value) => {
-            return (
+      <div className=" overflow-x-auto  h-[80vh] ">
+        <table class=" w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="  text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 w-full">
               <tr>
-                <th scope="col" class="p-4">
-                  <img className="rounded-2xl  w-[70px] h-[60px]" src={value?.image} alt={value?.title} />
-                </th>
-                <th scope="col" class="p-4">
-                  {value?.title}
-                </th>
-                <th scope="col" class="p-4 flex gap-2">
-                  <button>edit</button>
-                  <button>delte</button>
-
+                <th scope="col" className="p-4">
+                  Maxsulot rasmi
                 </th>
 
+                <th scope="col" className="p-4">
+                  Maxsulot Narxi
+                </th>
+                <th scope="col" className="p-4">
+                  Action
+                </th>
+                <th scope="col" className="p-4"></th>
               </tr>
-            )
-          })}
-        </thead>
-        <tbody></tbody>
-      </table>
+          </thead>
+          <tbody>
+            {[...categories].reverse()?.map((value) => {
+              return (
+                <tr>
+                  <th scope="col" class="p-4">
+                    <img className="rounded-2xl  w-[70px] h-[60px]" src={value?.image} alt={value?.title} />
+                  </th>
+                  <th scope="col" class="p-4">
+                    {value?.title}
+                  </th>
+                  <th scope="col" class="p-4 flex gap-2">
+                    <button>edit</button>
+                    <button>delte</button>
+
+                  </th>
+
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
