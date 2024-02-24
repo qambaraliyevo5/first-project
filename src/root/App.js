@@ -21,25 +21,25 @@ function App() {
           <Route path="contact" element={<h1>contact</h1>} />
           <Route path="signUp" element={<h1>Sign Up </h1>} />
         </Route>
-
         {/* Admin Panel Routes */}
-        <Route path="/admin" element={<Login />}>
-          <Route path="home" element={<Layout />}>
-            <Route index element={<h1>Admin</h1>} />
-            <Route path="order" element={<Order />} />
-            <Route path="subcategories" element={<TableCom />} />
-            <Route path="banners" element={<h1>Banners</h1>} />
-            <Route path="dashbord" element={<h1>Dashbord</h1>} />
-            <Route path="discount" element={<h1>Discount</h1>} />
-            <Route path="products" element={<ProductTable />} />
-            <Route path="deliveries" element={<h1>Deliveries</h1>} />
-            <Route path="categories" element={<CategoriesCrud />} />
-            <Route path="note" element={<h1>Note</h1>} />
+          <Route index element={<h1>Home Page</h1>} />
+          <Route path="/admin" element={<Login />} />
+          <Route element={<Layout />}>
+            <Route path="/admin/home" element={<h1>Admin</h1>} />
+            <Route path="/admin/order" element={<h1>order</h1>} />
+            <Route path="/admin/subcategories" element={<TableCom/>} />
+            <Route path="/admin/banners" element={<h1>banners</h1>} />
+            <Route path="/admin/dashbord" element={<h1>dashbord</h1>} />
+            <Route path="/admin/discount" element={<h1>discount</h1>} />
+            <Route path="/admin/products" element={<ProductTable />} />
+            <Route path="/admin/deliveries" element={<h1>deliveries</h1>} />
+            <Route path="/admin/categories" element={<CategoriesCrud />} />
+            <Route path="/admin/note" element={<h1>note</h1>} />
           </Route>
-        </Route>
       </Routes>
     </BrowserRouter>
   );
 }
+
 
 export default App;
