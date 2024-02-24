@@ -5,7 +5,7 @@ import {
   useUpdateCategorieMutation,
   useGetCategoryQuery,
 } from "../../redux/slice/CategoriesCrud/crud";
-import Modal from "../../generic/modal";
+import Modal from "../../generic/Modal";
 import ImageUpload from "../../generic/imgUpload";
 
 const UpdateCategories = ({ object }) => {
