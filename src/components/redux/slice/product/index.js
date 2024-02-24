@@ -1,8 +1,6 @@
 // api.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { api } from '../../../../Api/api';
-
-
+import { api } from '../../../../api/api';
 
 export const ProductCrud = createApi({
     baseQuery:api,

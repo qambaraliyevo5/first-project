@@ -1,6 +1,6 @@
 // api.js
 import { createApi} from '@reduxjs/toolkit/query/react';
-import { api } from '../../../../Api/api';
+import { api } from '../../../../api/api';
 
  
 export const OrderCrud = createApi({
