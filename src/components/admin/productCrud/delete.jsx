@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { toast } from "react-toastify";
-import Modal from "../../generic/Modal.jsx";
+import Modal from "../../generic/modal.jsx";
 import { useDeleteProductMutation } from "../../redux/slice/product";
 
 export default function DeleteCategorie({ ID, }) {

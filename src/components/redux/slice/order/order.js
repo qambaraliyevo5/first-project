@@ -1,6 +1,6 @@
 // api.js
 import { createApi} from '@reduxjs/toolkit/query/react';
-import { api } from '../../../../api/api';
+import { api } from '../../../../Api/api';
 
 
  

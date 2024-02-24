@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MdOutlineInsertPhoto } from 'react-icons/md';
 import { toast } from 'react-toastify';
-import Modal from '../../generic/Modal';
+import Modal from '../../generic/modal';
 import ImageUpload from '../../generic/imgUpload';
 import { useGetSubCategoryQuery } from '../../redux/slice/client/subcategory';
 
