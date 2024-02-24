@@ -9,8 +9,6 @@ import { useGetCategoriesQuery } from '../../redux/slice/CategoriesCrud/crud';
 import { useNavigate } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 const UpdateProduct = ({object}) => {
-
-    console.log(object,'object');
   // state
   const [skip, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState(object);
