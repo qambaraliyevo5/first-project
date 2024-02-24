@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { useCreateSubCatigoriesMutation } from "../../redux/slice/SubCategories/crud";
 
 import ImageUpload from "../../generic/imgUpload";
-import Modal from "../../generic/Modal";
+import Modal from "../../generic/modal";
 
 
 const AddCategoriesCom = () => {
