@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MdOutlineInsertPhoto } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import { useCreateProductMutation, useGetProductsQuery } from '../../redux/slice/product';
-import Modal from '../../generic/modal';
+import Modal from '../../generic/Modal';
 import ImageUpload from '../../generic/imgUpload';
 import { useGetSubCategoryQuery } from '../../redux/slice/client/subcategory';
 import { useGetCategoriesQuery } from '../../redux/slice/CategoriesCrud/crud';
