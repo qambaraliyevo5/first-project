@@ -4,6 +4,7 @@ import { useCreateSubCatigoriesMutation } from "../../redux/slice/SubCategories/
 import ImageUpload from "../../generic/imgUpload";
 import Modal from "../../generic/modal";
 
+
 const AddCategoriesCom = () => {
   const [open, setOpen] = useState(false);
 
