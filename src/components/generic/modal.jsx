@@ -1,5 +1,7 @@
-import React from "react";
+    import React from "react";
 import ButtonLoader from "./buttonLoader";
+
+
 // import ButtonLoader from "../Loader/ButtonLoader";
 export default function Modal({
   title,

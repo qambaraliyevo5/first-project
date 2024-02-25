@@ -1,5 +1,5 @@
 import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import axios from "axios";
+import axios from 'axios'
 
 export const apiUrl = "https://omofood.pythonanywhere.com/api/v1/";
 export const baseUrl = apiUrl;

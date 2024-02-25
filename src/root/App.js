@@ -5,6 +5,7 @@ import Login from '../components/admin/auth/sigin';
 import CategoriesCrud from '../components/admin/CategoriesCrud/table';
 import ProductTable from '../components/admin/productCrud/product';
 import TableCom from '../components/admin/subCategories/tableCom';
+import Banners from '../components/admin/banner/Banner';
 
 
 
@@ -20,7 +21,7 @@ function App() {
             <Route path="/admin/home" element={<h1>Admin</h1>} />
             <Route path="/admin/order" element={<h1>order</h1>} />
             <Route path="/admin/subcategories" element={<TableCom/>} />
-            <Route path="/admin/banners" element={<h1>banners</h1>} />
+            <Route path="/admin/banners" element={<Banners/>} />
             <Route path="/admin/dashbord" element={<h1>dashbord</h1>} />
             <Route path="/admin/discount" element={<h1>discount</h1>} />
             <Route path="/admin/products" element={<ProductTable />} />
