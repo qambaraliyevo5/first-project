@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { useGetProductsQuery } from '../../redux/slice/product'
 import AddCategories from './Addproduct.jsx';
 import DeleteCategorie from './delete.jsx';
 import UpdateProduct from './Update.jsx';
+import View from './view.jsx';
+import { useGetProductQuery } from '../../redux/slice/product/index.js';
+import AddImgUpload from './Imgupload.jsx';
 
 const ProductTable = () => {
-    const { data, error, isLoading } = useGetProductsQuery();
+    const { data, error, isLoading } = useGetProductQuery();
     const [search, setSearch] = useState("");
     const filteredData = data
         ? data?.filter((item) =>
@@ -18,10 +20,8 @@ const ProductTable = () => {
             name1: "Bunday product yo'q"
         }
     ]
-    console.log(data);
     return (
         <div className=" ">
-
             <section className="bg-gray-50  dark:bg-white-900 p-3 sm:p-4 antialiased">
                 <div className="">
                     <div className="bg-white  dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
@@ -61,7 +61,7 @@ const ProductTable = () => {
                                 <tbody>
                                     {isLoading ? (
                                         <div className="absolute inset-0 flex items-center justify-center">
-                                         <h1>Loading...</h1>
+                                            <h1>Loading...</h1>
                                         </div>
                                     ) : filteredData?.length > 0 ? (
                                         filteredData.reverse()?.map((item) => {
@@ -70,7 +70,7 @@ const ProductTable = () => {
                                             const options = { hour12: false };
                                             const formattedDate = dateObject.toLocaleString(
                                                 "en-US",
-                                                
+
                                                 options
                                             );
 
@@ -122,8 +122,10 @@ const ProductTable = () => {
                                                     </td>
                                                     <td className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                         <div className="flex items-center space-x-4">
-                                                        <UpdateProduct object={item}/>
-                                                        <DeleteCategorie ID={item.id}/>
+                                                            <View object={item} formattedDate={formattedDate} />
+                                                            <AddImgUpload ID={item.id} />
+                                                            <UpdateProduct object={item} />
+                                                            <DeleteCategorie ID={item.id} />
                                                         </div>
                                                     </td>
                                                 </tr>

@@ -4,6 +4,7 @@ import { api } from '../../../../Api/api';
 
 
 
+
 export const categoriesApi = createApi({
   reducerPath: 'categoriesApi',
   baseQuery: api, // Replace with your actual API base URL
