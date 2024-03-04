@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { useCreateCategoryMutation } from "../../redux/slice/CategoriesCrud/crud";
-
 import ImageUpload from "../../generic/imgUpload";
 import Modal from "../../generic/modal";
+import { useCreateCategoriaMutation } from "../../redux/slice/CategoriesCrud/crud";
 
 
 
@@ -11,7 +10,7 @@ const AddCategories = () => {
   const [open, setOpen] = useState(false);
 
 
-  const [createCategoria, { isLoading: isCreating }] = useCreateCategoryMutation();
+  const [createCategoria, { isLoading: isCreating }] = useCreateCategoriaMutation();
   const [inputValue, setInputValue] = useState({
     name: '',
     img: '',
